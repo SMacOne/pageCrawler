@@ -1,0 +1,2 @@
+cod_asia	link_pos	url
+78724	1	https://www.digesu.it/

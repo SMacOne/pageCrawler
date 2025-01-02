@@ -1,0 +1,6 @@
+cod_asia	link_pos	url
+129825	1	https://www.sacchi.it/
+78724	1	https://www.digesu.it/
+1160	1	https://pila.it/
+152262	1	https://www.sodexo.com/
+11430	1	https://www.gruppocomet.it/

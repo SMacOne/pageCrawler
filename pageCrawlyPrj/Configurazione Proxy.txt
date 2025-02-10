@@ -1,0 +1,48 @@
+CONFIGURAZIONE DEL PROXY
+
+
+installazione delle dipendenze di progetto dietro Proxy Istat
+pip install --proxy http://proxy.istat.it:8080 -r requirements.txt
+
+****************************************************
+istallazione di playwright
+
+install playwright
+
+1) effettuare il download manuale di playwright dal link dal quale, a seguito del comando "install playwright",
+ si ottiene un messaggio di timeout che indica l'impossibilità di raggiungere la sorgente.
+
+2) Installare manualmente, la root del programma scrapy con tutte le sue sottodirectory, nel percorso indicato nel report di errore
+che si manifesta quanda si avvia lo spider.
+
+
+***********************************************
+
+nel file settings.py:
+
+PLAYWRIGHT_BROWSER_TYPE = "chromium"
+PLAYWRIGHT_LAUNCH_OPTIONS = {
+    "headless": True,
+    "proxy": {"server": "http://proxy.istat.it:8080"}
+}
+
+DOWNLOADER_MIDDLEWARES = {
+    'pageCrawlyPrj.middlewares.CustomProxyMiddleware': 350,
+}
+
+*********************************************************************
+
+nel file middelwares.py
+
+class CustomProxyMiddleware(object):
+    def __init__(self):
+        self.proxy = 'http://proxy.istat.it:8080'
+
+    def process_request(self, request, spider):
+        if 'proxy' not in request.meta:
+            request.meta['proxy'] = self.proxy
+
+    def get_proxy(self):
+        return self.proxy
+
+

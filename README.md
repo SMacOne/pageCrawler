@@ -21,29 +21,28 @@ Istructions to run project without a proxy
 
 inside the settings.py files delete:
 
-PLAYWRIGHT_BROWSER_TYPE = "chromium"
-PLAYWRIGHT_LAUNCH_OPTIONS = {
-    "headless": True,
-    "proxy": {"server": "http://proxy.istat.it:8080"}
-}
+         PLAYWRIGHT_BROWSER_TYPE = "chromium"
+         PLAYWRIGHT_LAUNCH_OPTIONS = {
+             "headless": True,
+             "proxy": {"server": "http://proxy.istat.it:8080"}
+         }
+         
+         DOWNLOADER_MIDDLEWARES = {
+             'pageCrawlyPrj.middlewares.CustomProxyMiddleware': 350,
+         }
 
-DOWNLOADER_MIDDLEWARES = {
-    'pageCrawlyPrj.middlewares.CustomProxyMiddleware': 350,
-}
-
-*********************************************************************
 
 inside the file middelwares.py file delete:
 
-class CustomProxyMiddleware(object):
-    def __init__(self):
-        self.proxy = 'http://proxy.istat.it:8080'
-
-    def process_request(self, request, spider):
-        if 'proxy' not in request.meta:
-            request.meta['proxy'] = self.proxy
-
-    def get_proxy(self):
-        return self.proxy
+      class CustomProxyMiddleware(object):
+          def __init__(self):
+              self.proxy = 'http://proxy.istat.it:8080'
+      
+          def process_request(self, request, spider):
+              if 'proxy' not in request.meta:
+                  request.meta['proxy'] = self.proxy
+      
+          def get_proxy(self):
+              return self.proxy
 
 

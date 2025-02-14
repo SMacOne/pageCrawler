@@ -1,5 +1,5 @@
 This is a beta version.
-It will not work withouth a proper Proxy configuration 
+Check the network proxy settings before to use it!
 
 To install software use following steps
 1.	Download project in a local directory(Download Zip project end extrat files in a local Directory)

@@ -13,7 +13,10 @@ To install software use following steps
 7.	Install project dependencies (pip install  -r requirements.txt --proxy http://proxy.istat.it:8080). If u don't have a proxy delete  --proxy http://proxy.istat.it:8080 from the command line
 8.	Run the spider (scrapy crawl newSpider)
 
-Istructions to run project without a prox
+
+
+*********************************************************************
+Istructions to run project without a proxy
 
 
 inside the settings.py files delete:

@@ -6,12 +6,20 @@ To install software use following steps
 2.	With an IDE like Pycharm, open from menu bar( New File --- New Project) set the local directory in project directory field and open project.
 3.	Open the IDE Terminal.
    
-4.	If u don't see a virtual environment in the project before to continue create it first! PyCharm usually create a virtual environment each time u open a new project.
+4.	If u aren't inside a virtual environment, before to continue create it! PyCharm usually create a virtual environment each time u open a new project.
+
+To create a virtual environment in your IDE: Execute th command: python -m venv name_environment, name_environment is the name of tne new virtual environment. 
+
+
+Activate the virtual Environment:
+
+On Windows: name_environment\Scripts\activate.
+On macOS and Linux: name_environment/bin/activate.
   
-5.	Navigate in the directory tree until to reach the project directory (pageCrawlyPrj)
-6.	To reach the project directory in the terminal use these commands (Cd..  cd pageCrawlyPrj)
-7.	Install project dependencies (pip install  -r requirements.txt --proxy http://proxy.istat.it:8080). If u don't have a proxy delete  --proxy http://proxy.istat.it:8080 from the command line
-8.	Run the spider (scrapy crawl newSpider)
+6.	Navigate in the directory tree until to reach the project directory (pageCrawlyPrj)
+7.	To reach the project directory in the terminal use these commands (Cd..  cd pageCrawlyPrj)
+8.	Install project dependencies (pip install  -r requirements.txt --proxy http://proxy.istat.it:8080). If u don't have a proxy delete  --proxy http://proxy.istat.it:8080 from the command line
+9.	Run the spider (scrapy crawl newSpider)
 
 
 

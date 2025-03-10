@@ -8,13 +8,13 @@ To install software use following steps
    
 4.	If u aren't inside a virtual environment, before to continue create it! PyCharm usually create a virtual environment each time u open a new project.
 
-To create a virtual environment in your IDE: Execute th command: python -m venv name_environment, name_environment is the name of tne new virtual environment. 
+5. To create a virtual environment in your IDE: Execute th command: python -m venv name_environment,      name_environment is the name of tne new virtual environment. 
 
 
-Activate the virtual Environment:
+   Activate the virtual Environment:
 
-On Windows: name_environment\Scripts\activate.
-On macOS and Linux: name_environment/bin/activate.
+   On Windows: name_environment\Scripts\activate.
+   On macOS and Linux: name_environment/bin/activate.
   
 6.	Navigate in the directory tree until to reach the project directory (pageCrawlyPrj)
 7.	To reach the project directory in the terminal use these commands (Cd..  cd pageCrawlyPrj)

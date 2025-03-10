@@ -22,7 +22,37 @@ To install software use following steps
 9.	Install project dependencies (pip install  -r requirements.txt --proxy http://proxy.istat.it:8080). If u don't have a proxy delete  --proxy http://proxy.istat.it:8080 from the command line
 10.	Run the spider (scrapy crawl newSpider)
 
+*********************************************************************
+Problems with playwryght component
+solution: reinstall playwright with the following command: playwright install
 
+In the case u get the following error message:
+****
+      Downloading Chromium 128.0.6613.18 (playwright build v1129) from https://playwright-verizon.azureedge.net/builds/chromium/1129/chromium-win64.zip
+      Error: connect ETIMEDOUT 13.107.246.60:443
+          at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+        errno: -4039,
+        code: 'ETIMEDOUT',
+        syscall: 'connect',
+        address: '13.107.246.60',
+        port: 443
+      }
+      Failed to install browsers
+      Error: Failed to download Chromium 128.0.6613.18 (playwright build v1129), caused by
+      Error: Download failure, code=1
+****
+
+
+download playwright manually at the following link: https://playwright-verizon.azureedge.net/builds/chromium/1129/chromium-win64.zip
+
+
+extract everything in the following directory : ..\AppData\Local\ms-playwright\chromium-1129\chrome-win
+if the path doesn't exist, create it manually.
+At the end of extraction process, verify if the "chrome-win" directory contains the file "chromium.exe" 
+
+
+
+If something go wrong and you need to restart the scrapy project, in the terminal reach the higher level (pageCrawlyPrj) directory and type the following command: scrapy startproject pageCrawlyPrj
 
 *********************************************************************
 Istructions to run project without a proxy

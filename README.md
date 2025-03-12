@@ -20,7 +20,7 @@ To install software use following steps
    On macOS and Linux: name_environment/bin/activate.
   
 8.	Navigate inside the directory tree until to reach the top project directory (pageCrawlyPrj)
-9.	To reach the project directory in the terminal use the command (cd..)
+9.	To reach the project directory inside the terminal use the command (cd..)
 10.	Install project dependencies (pip install  -r requirements.txt --proxy http://proxy.istat.it:8080). If u don't have a proxy delete "--proxy http://proxy.istat.it:8080" from the command line
 11.	Run the spider (scrapy crawl newSpider)
 

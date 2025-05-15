@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/pageCrawler.iml" filepath="$PROJECT_DIR$/.idea/pageCrawler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/pageCrawlyPrj.iml" filepath="$PROJECT_DIR$/.idea/pageCrawlyPrj.iml" />
     </modules>
   </component>
 </project>

@@ -14,7 +14,7 @@ NEWSPIDER_MODULE = "pageCrawlyPrj.spiders"
 
 DUPEFILTER_CLASS = "scrapy.dupefilters.RFPDupeFilter"  # Attivo di default
 # SCHEDULER_PRIORITY_QUEUE = 'scrapy.pqueues.DownloaderLifoPriorityQueue'  # Depth-First
-DEPTH_LIMIT = 3  # Numero massimo di livelli da esplorare
+DEPTH_LIMIT = 1  # Numero massimo di livelli da esplorare
 DEPTH_PRIORITY = 0  # Preferisci andare più in profondità prima di esplorare altre pagine
 # DOWNLOAD_DELAY = 1
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -22,12 +22,12 @@ DEPTH_PRIORITY = 0  # Preferisci andare più in profondità prima di esplorare a
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
-CONCURRENT_REQUESTS_PER_DOMAIN = 5  # Limita a 5 richieste per dominio
-CONCURRENT_REQUESTS = 30  # Limita il numero totale di richieste parallele
+CONCURRENT_REQUESTS_PER_DOMAIN = 1  # Limita a 5 richieste per dominio
+CONCURRENT_REQUESTS = 3  # Limita il numero totale di richieste parallele
 # CLOSESPIDER_PAGECOUNT = 10
 
 #HTTP_PROXY = "http://proxy.istat.it:8080"
-
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 
 
 PLAYWRIGHT_BROWSER_TYPE = "chromium"
@@ -38,6 +38,10 @@ PLAYWRIGHT_LAUNCH_OPTIONS = {
 DOWNLOADER_MIDDLEWARES = {
     'pageCrawlyPrj.middlewares.CustomProxyMiddleware': 350,
 }
+
+COOKIES_ENABLED = False
+#DOWNLOAD_DELAY = 2
+
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 # CONCURRENT_REQUESTS = 32
 
@@ -118,12 +122,14 @@ DOWNLOAD_HANDLERS = {
 }
 
 # Disabilita il middleware di download predefinito per i timeout di Scrapy (facoltativo)
-DOWNLOAD_HANDLERS_BASE = {
-    "http": None,
-    "https": None,
-}
+# DOWNLOAD_HANDLERS_BASE = {
+#     "http": None,
+#     "https": None,
+# }
 
 # Impostazioni Playwright (numero di browser contemporanei)
+
+
 
 FEEDS = {
     'output5.json': {
@@ -136,5 +142,5 @@ FEEDS = {
     },
 }
 LOG_LEVEL = 'INFO'
-PLAYWRIGHT_LOG_LEVEL = "info"
+PLAYWRIGHT_LOG_LEVEL = "DEBUG"
 LOG_FILE = 'scrapy_log.txt'

@@ -1,2 +1,0 @@
-cod_asia	link_pos	url
-11430	1	https://www.gruppocomet.it/
